@@ -28,3 +28,13 @@ services:
        - 8000:8000
      depends_on:
        - db
+
+  store:
+     build: ./apps/store
+     command: npm run dev
+     volumes:
+       - ./apps/store/src:/store/src
+     ports: 
+       - 3001:3001
+     depends_on:
+       - base-api

@@ -7,5 +7,5 @@ npm run start:dev
 # or
 docker build .
 #then
-docker run -p 8000:8000 -v $(pwd)/src:/store/src <image-id>
+docker run -p 8000:8000 -v $(pwd)/src:/base-api/src <image-id>
 ```
