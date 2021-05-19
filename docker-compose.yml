@@ -1,4 +1,5 @@
 version: '3'
+
 services:
 
   db:
@@ -17,3 +18,13 @@ services:
       - ./db/migrations:/flyway/sql
     depends_on:
       - db
+
+  base-api:
+     build: ./base-api
+     command: npm run start:dev
+     volumes:
+       - ./base-api/src:/base-api/src
+     ports: 
+       - 8000:8000
+     depends_on:
+       - db
